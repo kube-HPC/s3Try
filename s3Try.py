@@ -107,9 +107,3 @@ a = np.array(times)
 for percentile in [50,90,99]:
     p = np.percentile(a, percentile) # return 50th percentile, e.g median.
     print("percentile",percentile,":",p)
-
-
-# to run as pod
-# kubectl run s3try -i -t --rm --image=hkube/s3try:v1.0.0 --restart=Never --env S3_ENDPOINT_URL=http://10.32.10.24:9000 --env AWS_ACCESS_KEY_ID=agambstorage --env AWS_SECRET_ACCESS_KEY=234eqndbpuCkGtH85KSyK/xAv3xuqdOpM3fKOLYlrSerpdKoG1FYy3kh6ArceL+yDwTvQOgs47xYO/ktnNzEeg== --env SIZE=100 --env OPERATION=upload
-# as docker
-# docker run --rm -it -e S3_ENDPOINT_URL=http://10.32.10.24:9000 -e AWS_ACCESS_KEY_ID=agambstorage -e AWS_SECRET_ACCESS_KEY=234eqndbpuCkGtH85KSyK/xAv3xuqdOpM3fKOLYlrSerpdKoG1FYy3kh6ArceL+yDwTvQOgs47xYO/ktnNzEeg== -e SIZE=100 -e OPERATION=upload  hkube/s3try:v1.0.0
