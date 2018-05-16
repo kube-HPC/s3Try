@@ -20,7 +20,7 @@ def downloadFromS3(url):
         print("Error downloading file",e)
         res = e.response
         outMessage = {'command': 'errorMessage', 'data': res}
-        socketIO.emit('errorMessage', outMessage)
+        print(outMessage)
         return None
 
 
@@ -39,7 +39,7 @@ def uploadToS3(url,data):
         print("Error downloading file",e)
         res = e.response
         outMessage = {'command': 'errorMessage', 'data': res}
-        socketIO.emit('errorMessage', outMessage)
+        print(outMessage)
         return None
 
 
